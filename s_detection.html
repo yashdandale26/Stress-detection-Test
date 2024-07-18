@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stress Detection Test</title>
+    <link rel="stylesheet" href="C:\Users\YASH DANDALE\OneDrive\Desktop\pythonProject\Flask\static\style_test.css">
+</head>
+<body>
+	<h1>Stress Detection Test</h1>
+	<form>
+		<h2>Question 1:</h2>
+		<p>Do you have trouble staying focused on the present movement?</p>
+		<input type="radio" name="q1" value="1"> Rarely<br>
+		<input type="radio" name="q1" value="2"> Never<br>
+		<input type="radio" name="q1" value="3"> Often<br>
+		<input type="radio" name="q1" value="4"> Almost always<br>
+		
+		<h2>Question 2:</h2>
+		<p>Do you struggle to fall asleep at night?</p>
+		<input type="radio" name="q2" value="1"> Sometime<br>
+		<input type="radio" name="q2" value="2">  Never<br>
+		<input type="radio" name="q2" value="3"> Often<br>
+		<input type="radio" name="q2" value="4"> Almost always<br>
+		
+		<h2>Question 3:</h2>
+		<p>Do you turn to unhealthy food indulgences such as eating junk food, drinking exessively, or eating sugar food when feeling overwhelmed?</p>
+		<input type="radio" name="q3" value="1"> Rarely<br>
+		<input type="radio" name="q3" value="2">  Never<br>
+		<input type="radio" name="q3" value="3"> Often<br>
+		<input type="radio" name="q3" value="4"> Almost always<br>
+		<h2>Question 4 :</h2>
+		<p>Do you experiance headaches or muscle tension?</p>
+		<input type="radio" name="q4" value="1"> Rarely<br>
+		<input type="radio" name="q4" value="2">  Never<br>
+		<input type="radio" name="q4" value="3"> Often<br>
+		<input type="radio" name="q4" value="4"> Almost always<br>
+		<h2>Question 5:</h2>
+		<p>During work hours, do you have a hard time staying focused and concentration on the task at hand?</p>
+		<input type="radio" name="q5" value="1"> Rarely<br>
+		<input type="radio" name="q5" value="2">  Never<br>
+		<input type="radio" name="q5" value="3"> Often<br>
+		<input type="radio" name="q5" value="4"> Almost always<br>
+		<h2>Question 6:</h2>
+		<p>Do you feel pain or tention in your in your stomach, muscles, chest or head?</p>
+		<input type="radio" name="q6" value="1"> Rarely<br>
+		<input type="radio" name="q6" value="2">  Never<br>
+		<input type="radio" name="q6" value="3"> Often<br>
+		<input type="radio" name="q6" value="4"> Almost always<br>
+		<h2>Question 7:</h2>
+		<p>Do you feel like withdrawing from family, friends and isolating yourself?</p>
+		<input type="radio" name="q7" value="1"> Rarely<br>
+		<input type="radio" name="q7" value="2">  Never<br>
+		<input type="radio" name="q7" value="3"> Often<br>
+		<input type="radio" name="q7" value="4"> Almost always<br>
+		<h2>Question 8:</h2>
+		<p>Has there been an increase in your daily habits such as using alcohol, drugs or tabacco as a way to self-soothe?</p>
+		<input type="radio" name="q8" value="1"> Rarely<br>
+		<input type="radio" name="q8" value="2"> Never<br>
+		<input type="radio" name="q8" value="3"> Often<br>
+		<input type="radio" name="q8" value="4"> Almost always<br>
+		<h2>Question 9:</h2>
+		<p>Do you feel irritable, annoyed or angry over trivial issues?</p>
+		<input type="radio" name="q9" value="1"> Rarely<br>
+		<input type="radio" name="q9" value="2">  Never<br>
+		<input type="radio" name="q9" value="3"> Often<br>
+		<input type="radio" name="q9" value="4"> Almost always<br>
+		
+		
+		<button type="button" onclick="submitForm()">Submit</button>
+	</form>
+	
+	<p id="result"></p>
+	
+	<script>
+		function submitForm() {
+			var q1 = parseInt(document.querySelector('input[name="q1"]:checked').value);
+			var q2 = parseInt(document.querySelector('input[name="q2"]:checked').value);
+			var q3 = parseInt(document.querySelector('input[name="q3"]:checked').value);
+            var q4 = parseInt(document.querySelector('input[name="q4"]:checked').value);
+            var q5 = parseInt(document.querySelector('input[name="q5"]:checked').value);
+            var q6 = parseInt(document.querySelector('input[name="q6"]:checked').value);
+            var q7 = parseInt(document.querySelector('input[name="q7"]:checked').value);
+            var q8 = parseInt(document.querySelector('input[name="q8"]:checked').value);
+            var q9 = parseInt(document.querySelector('input[name="q9"]:checked').value);
+			var score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9;
+			
+			if (score < 18) {
+				document.getElementById("result").innerHTML = "You appear to be managing stress well.";
+			} else if (score >= 18 && score < 6) {
+				document.getElementById("result").innerHTML = "You may be experiencing mild to moderate levels of stress. Consider practicing relaxation techniques.";
+			} else {
+				document.getElementById("result").innerHTML = "You may be experiencing high levels of stress. Consider seeking support from a mental health professional.";
+			}
+		}
+	</script>
+</body>
+</html>
